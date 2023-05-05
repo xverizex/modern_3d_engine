@@ -15,6 +15,9 @@ else()
 	message (STATUS "Graphics backend by default: " ${GRAPHICS_BACKEND})
 endif()
 
+set (INCLUDE_GRAPHICS
+	BackendGraphics/${GRAPHICS_BACKEND}
+	)
 
 if (GRAPHICS_BACKEND MATCHES OpenGLES)
 	pkg_check_modules (GRAPHICS REQUIRED glesv2)
@@ -41,6 +44,7 @@ add_executable (modern_3d_engine ${SOURCES} ${SOURCES_GRAPHICS})
 target_include_directories (modern_3d_engine PRIVATE
 	${SDL_INCLUDE_DIRS}
 	${GRAPHICS_INCLUDE_DIRS}
+	${INCLUDE_GRAPHICS}
 	"."
 	)
 
