@@ -35,8 +35,18 @@ elseif (GRAPHICS_BACKEND MATCHES Vulkan)
 		)
 endif()
 
+set (EVENT_SYSTEM
+	EventSystem/EventSystem.cpp
+	)
+
+set (UI
+	UI/Widget.cpp
+	)
+
 set (SOURCES
 	Main.cpp
+	${UI}
+	${EVENT_SYSTEM}
 	)
 
 add_executable (modern_3d_engine ${SOURCES} ${SOURCES_GRAPHICS})
