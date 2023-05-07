@@ -24,6 +24,7 @@ if (GRAPHICS_BACKEND MATCHES OpenGLES)
 	add_definitions (-DOPENGLES)
 	set (SOURCES_GRAPHICS
 		BackendGraphics/OpenGLES/Graphics.cpp
+		BackendGraphics/OpenGLES/Shader.cpp
 		)
 elseif (GRAPHICS_BACKEND MATCHES OpenGL)
 	set (SOURCES_GRAPHICS
